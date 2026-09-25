@@ -501,4 +501,3 @@ Thống kê
 
 **Sinh viên thực hiện:** Ngô Quốc Thiên Bảo
 **MSSV:** 1250080015
-**Môn học:** Phân tích thiết kế hướng đối tượng (OOSD) — HUTECH
