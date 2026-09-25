@@ -1,0 +1,8 @@
+D:\opp-software-development\LAB3\QuanLyKhachSan_Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+D:\opp-software-development\LAB3\QuanLyKhachSan_Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+D:\opp-software-development\LAB3\QuanLyKhachSan_Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+D:\opp-software-development\LAB3\QuanLyKhachSan_Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.AssemblyReference.cache
+D:\opp-software-development\LAB3\QuanLyKhachSan_Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+D:\opp-software-development\LAB3\QuanLyKhachSan_Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+D:\opp-software-development\LAB3\QuanLyKhachSan_Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+D:\opp-software-development\LAB3\QuanLyKhachSan_Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe.config
