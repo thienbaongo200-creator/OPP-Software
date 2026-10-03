@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+		<Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
+
+		<ProjectGuid>{B2A8D9F1-7A33-4E4C-B2F2-9A5D1D8A3A10}</ProjectGuid>
+
+		<OutputType>WinExe</OutputType>
+		<RootNamespace>EShopping</RootNamespace>
+		<AssemblyName>EShopping</AssemblyName>
+
+		<TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+
+		<FileAlignment>512</FileAlignment>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<Deterministic>true</Deterministic>
+		<LangVersion>7.3</LangVersion>
+
+		<!-- Ép đường dẫn output chung -->
+		<BaseOutputPath>bin\</BaseOutputPath>
+		<OutputPath>bin\Debug\</OutputPath>
+	</PropertyGroup>
+
+	<!-- DEBUG -->
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+
+		<PlatformTarget>AnyCPU</PlatformTarget>
+
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+
+		<Optimize>false</Optimize>
+
+		<OutputPath>bin\Debug\</OutputPath>
+		<BaseOutputPath>bin\</BaseOutputPath>
+
+		<Prefer32Bit>false</Prefer32Bit>
+
+	</PropertyGroup>
+
+	<!-- RELEASE -->
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+
+		<PlatformTarget>AnyCPU</PlatformTarget>
+
+		<DebugSymbols>false</DebugSymbols>
+		<DebugType>pdbonly</DebugType>
+
+		<DefineConstants>TRACE</DefineConstants>
+
+		<Optimize>true</Optimize>
+
+		<OutputPath>bin\Release\</OutputPath>
+		<BaseOutputPath>bin\</BaseOutputPath>
+
+		<Prefer32Bit>false</Prefer32Bit>
+
+	</PropertyGroup>
+
+	<!-- REFERENCES -->
+	<ItemGroup>
+
+		<Reference Include="System" />
+		<Reference Include="System.Core" />
+		<Reference Include="System.Data" />
+		<Reference Include="System.Drawing" />
+		<Reference Include="System.Windows.Forms" />
+		<Reference Include="System.Configuration" />
+
+	</ItemGroup>
+
+	<!-- PROGRAM -->
+	<ItemGroup>
+
+		<Compile Include="Program.cs" />
+
+	</ItemGroup>
+
+	<!-- ENTITIES -->
+	<ItemGroup>
+
+		<Compile Include="Entities\*.cs" />
+
+	</ItemGroup>
+
+	<!-- DATA -->
+	<ItemGroup>
+
+		<Compile Include="Data\*.cs" />
+
+	</ItemGroup>
+
+	<!-- SERVICES -->
+	<ItemGroup>
+
+		<Compile Include="Services\*.cs" />
+
+	</ItemGroup>
+
+	<!-- ADAPTERS -->
+	<ItemGroup>
+
+		<Compile Include="Adapters\*.cs" />
+
+	</ItemGroup>
+
+	<!-- FORMS -->
+	<ItemGroup>
+
+		<Compile Include="Forms\FrmShop.cs">
+			<SubType>Form</SubType>
+		</Compile>
+
+		<Compile Include="Forms\FrmShop.Designer.cs">
+			<DependentUpon>FrmShop.cs</DependentUpon>
+		</Compile>
+
+		<Compile Include="Forms\FrmCart.cs">
+			<SubType>Form</SubType>
+		</Compile>
+
+		<Compile Include="Forms\FrmCart.Designer.cs">
+			<DependentUpon>FrmCart.cs</DependentUpon>
+		</Compile>
+
+		<Compile Include="Forms\FrmCheckout.cs">
+			<SubType>Form</SubType>
+		</Compile>
+
+		<Compile Include="Forms\FrmCheckout.Designer.cs">
+			<DependentUpon>FrmCheckout.cs</DependentUpon>
+		</Compile>
+
+	</ItemGroup>
+
+	<!-- OTHER FILES -->
+	<ItemGroup>
+
+		<None Include="App.config">
+			<SubType>Designer</SubType>
+		</None>
+
+		<None Include="Database\01_eshopping_database.sql" />
+
+	</ItemGroup>
+
+	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+</Project>

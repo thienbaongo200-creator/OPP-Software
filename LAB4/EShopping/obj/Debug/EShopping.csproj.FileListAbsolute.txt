@@ -1,0 +1,7 @@
+D:\opp-software-development\LAB4\EShopping_LAB3_Clean_NET472\bin\Debug\EShopping.exe.config
+D:\opp-software-development\LAB4\EShopping_LAB3_Clean_NET472\bin\Debug\EShopping.exe
+D:\opp-software-development\LAB4\EShopping_LAB3_Clean_NET472\bin\Debug\EShopping.pdb
+D:\opp-software-development\LAB4\EShopping_LAB3_Clean_NET472\obj\Debug\EShopping.csproj.AssemblyReference.cache
+D:\opp-software-development\LAB4\EShopping_LAB3_Clean_NET472\obj\Debug\EShopping.csproj.CoreCompileInputs.cache
+D:\opp-software-development\LAB4\EShopping_LAB3_Clean_NET472\obj\Debug\EShopping.exe
+D:\opp-software-development\LAB4\EShopping_LAB3_Clean_NET472\obj\Debug\EShopping.pdb
