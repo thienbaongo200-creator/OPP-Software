@@ -51,12 +51,3 @@ Các kịch bản kiểm thử chi tiết và câu SQL đối chứng có trong 
 Project có 6 sơ đồ PlantUML trong `QuanLyCongTyDuLich_Lab5/UML/`: hai Use Case phân rã, hai Activity và hai Sequence. Mở các file `.puml` bằng công cụ hỗ trợ PlantUML để xem hoặc xuất ảnh. Đối chiếu lại tên tác nhân, luồng và quy tắc nghiệp vụ với PDF trước khi đưa vào báo cáo.
 
 Khi báo cáo, trình bày yêu cầu, thiết kế, cách chạy, kết quả kiểm thử và ảnh minh chứng phù hợp với đề. Chỉ ghi nhận những chức năng đã chạy thử thực tế; nêu rõ phần nào còn thiếu hoặc chưa kiểm chứng.
-
-## Checklist trước khi nộp
-
-- [ ] Đã đối chiếu project LAB5 với toàn bộ yêu cầu của đề Bài 6.
-- [ ] SQL chạy trên database thử và truy vấn kiểm tra dữ liệu đạt yêu cầu.
-- [ ] Solution build thành công; các chức năng được yêu cầu đã chạy thử.
-- [ ] Sơ đồ và báo cáo khớp với hệ thống đã triển khai.
-- [ ] Báo cáo có tên **Ngô Quốc Thiên Bảo** và MSSV **1250080015**.
-- [ ] Không đưa database thử, file build hoặc cấu hình chứa thông tin nhạy cảm vào gói nộp nếu không được yêu cầu.
