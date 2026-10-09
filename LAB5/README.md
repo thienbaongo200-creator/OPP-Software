@@ -10,7 +10,6 @@
 - Đề bài: [`Bai_6_Quan_ly_cong_ty_du_lich.pdf`](./Bai_6_Quan_ly_cong_ty_du_lich.pdf)
 - Project hiện có: [`QuanLyCongTyDuLich_Lab5`](./QuanLyCongTyDuLich_Lab5/)
 - Hướng dẫn chi tiết của project: [`README_HUONG_DAN.md`](./QuanLyCongTyDuLich_Lab5/README_HUONG_DAN.md)
-- Ghi chú mở WinForms Designer: [`README_SUA_DESIGNER.txt`](./QuanLyCongTyDuLich_Lab5/README_SUA_DESIGNER.txt)
 
 
 ## Cách thực hiện
