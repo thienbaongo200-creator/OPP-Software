@@ -1,0 +1,38 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontSize 14
+title LAB5 - SEQUENCE: HUY DANG KY DOAN (MAT COC)
+actor "NV kinh doanh" as NV
+boundary "FrmDangKyDoan" as Form
+control "DangKyDoanService" as S
+participant "Db / SqlConnection" as Db
+database "SQL Server" as SQL
+NV -> Form : Chọn phiếu, nhấn "Hủy phiếu"
+Form -> S : HuyDangKy(soDK)
+S -> Db : Query(SELECT NgayDi, TrangThai WHERE SoDKDoan=@s)
+Db -> SQL : SELECT NgayDi, TrangThai FROM DangKyDoan
+SQL --> Db : Dữ liệu phiếu / rỗng
+Db --> S : DataTable
+alt Không có phiếu
+  S --> Form : Fail("Không tìm thấy phiếu")
+else Trạng thái khác "Đã đăng ký"
+  S --> Form : Fail("Không được hủy")
+else Ngày đi <= hôm nay
+  S --> Form : Fail("Đoàn đã khởi hành")
+else Hợp lệ
+  S -> Db : OpenConnection(); BeginTransaction()
+  S -> SQL : DELETE PhanCongHDV WHERE SoDKDoan=@s
+  S -> SQL : UPDATE DangKyDoan SET TrangThai='Hủy - mất cọc'
+  alt Hai lệnh thực thi thành công
+    S -> Db : Commit()
+    S --> Form : Ok("Đã hủy phiếu, mất tiền cọc")
+    Form -> Form : Tai() nạp lại danh sách
+  else Xảy ra lỗi
+    S -> Db : Rollback()
+    S --> Form : Fail(ex.Message)
+  end
+end
+Form -> Form : FormHelper.Bao(kết quả)
+Form --> NV : Hiển thị kết quả
+@enduml

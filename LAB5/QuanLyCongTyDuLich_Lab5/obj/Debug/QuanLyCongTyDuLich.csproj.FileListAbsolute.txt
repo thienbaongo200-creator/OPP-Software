@@ -1,0 +1,8 @@
+D:\opp-software-development\LAB5\QuanLyCongTyDuLich_Lab5\bin\Debug\QuanLyCongTyDuLich.exe.config
+D:\opp-software-development\LAB5\QuanLyCongTyDuLich_Lab5\bin\Debug\QuanLyCongTyDuLich.exe
+D:\opp-software-development\LAB5\QuanLyCongTyDuLich_Lab5\bin\Debug\QuanLyCongTyDuLich.pdb
+D:\opp-software-development\LAB5\QuanLyCongTyDuLich_Lab5\obj\Debug\QuanLyCongTyDuLich.csproj.AssemblyReference.cache
+D:\opp-software-development\LAB5\QuanLyCongTyDuLich_Lab5\obj\Debug\QuanLyCongTyDuLich.csproj.CoreCompileInputs.cache
+D:\opp-software-development\LAB5\QuanLyCongTyDuLich_Lab5\obj\Debug\QuanLyCongTyDuLich.exe
+D:\opp-software-development\LAB5\QuanLyCongTyDuLich_Lab5\obj\Debug\QuanLyCongTyDuLich.pdb
+D:\opp-software-development\LAB5\QuanLyCongTyDuLich_Lab5\obj\Debug\QuanLyCongTyDuLich.exe.config

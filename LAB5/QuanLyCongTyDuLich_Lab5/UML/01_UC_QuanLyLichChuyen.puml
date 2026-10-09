@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+skinparam monochrome true
+skinparam shadowing false
+skinparam actorStyle stick
+skinparam defaultFontSize 14
+skinparam packageStyle rectangle
+title LAB5 - PHAN RA USE CASE: QUAN LY LICH CHUYEN KHACH LE
+
+actor "NV điều hành" as NV
+rectangle "Quản lý lịch chuyến khách lẻ" {
+  usecase "Tạo chuyến khách lẻ" as Tao
+  usecase "Chọn tour đang mở bán" as ChonTour
+  usecase "Kiểm tra dữ liệu chuyến" as KiemTra
+  usecase "Tính ngày về" as TinhNgay
+  usecase "Lưu chuyến vào CSDL" as Luu
+  usecase "Đóng đăng ký chuyến" as Dong
+}
+NV --> Tao
+NV --> Dong
+Tao ..> ChonTour : <<include>>
+Tao ..> KiemTra : <<include>>
+Tao ..> TinhNgay : <<include>>
+Tao ..> Luu : <<include>>
+note bottom of TinhNgay
+  Ngày về = Ngày đi + Số ngày tour - 1
+end note
+@enduml

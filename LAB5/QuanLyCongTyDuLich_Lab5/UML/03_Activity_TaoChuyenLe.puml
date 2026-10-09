@@ -1,0 +1,27 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontSize 14
+title LAB5 - ACTIVITY: TAO LICH CHUYEN KHACH LE
+start
+:NV điều hành mở FrmChuyenLe;
+:Chọn tour, nhập mã chuyến,\nngày đi và địa điểm đón;
+if (Thông tin bắt buộc đầy đủ?) then (Có)
+  :Tra cứu SoNgay của tour đang mở bán;
+  if (Tìm thấy tour đang mở bán?) then (Có)
+    :Tính NgayVe = NgayDi + SoNgay - 1;
+    :Ghi bản ghi ChuyenLe vào SQL Server;
+    if (Ghi CSDL thành công?) then (Có)
+      :Thông báo tạo chuyến thành công;
+      :Nạp lại danh sách chuyến;
+    else (Không)
+      :Báo lỗi SQL (ví dụ trùng MaChuyen);
+    endif
+  else (Không)
+    :Báo tour không tồn tại hoặc chưa mở bán;
+  endif
+else (Không)
+  :Báo thông tin chuyến chưa đầy đủ;
+endif
+stop
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+left to right direction
+skinparam monochrome true
+skinparam shadowing false
+skinparam actorStyle stick
+skinparam defaultFontSize 14
+skinparam packageStyle rectangle
+title LAB5 - PHAN RA USE CASE: HUY DANG KY DOAN
+
+actor "NV kinh doanh" as NV
+rectangle "Hủy đăng ký đoàn (mất cọc)" {
+  usecase "Hủy phiếu đăng ký đoàn" as Huy
+  usecase "Tra cứu phiếu đoàn" as TraCuu
+  usecase "Kiểm tra trạng thái\nĐã đăng ký" as KiemTraTT
+  usecase "Kiểm tra chưa đến\nngày khởi hành" as KiemTraNgay
+  usecase "Gỡ phân công HDV\n(nếu có)" as GoPC
+  usecase "Cập nhật trạng thái\nHủy - mất cọc" as CapNhat
+}
+NV --> Huy
+Huy ..> TraCuu : <<include>>
+Huy ..> KiemTraTT : <<include>>
+Huy ..> KiemTraNgay : <<include>>
+Huy ..> GoPC : <<include>>
+Huy ..> CapNhat : <<include>>
+note bottom of CapNhat
+  Gỡ phân công và cập nhật trạng thái
+  trong cùng transaction; không hoàn tiền cọc.
+end note
+@enduml

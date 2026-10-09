@@ -1,0 +1,33 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontSize 14
+title LAB5 - ACTIVITY: HUY PHIEU DANG KY DOAN
+start
+:NV kinh doanh chọn phiếu đăng ký đoàn;
+:Tra cứu NgayDi và TrangThai từ DangKyDoan;
+if (Tìm thấy phiếu?) then (Có)
+  if (TrangThai = "Đã đăng ký"?) then (Có)
+    if (NgayDi > ngày hiện tại?) then (Có)
+      :Mở kết nối, BeginTransaction;
+      :Xóa các phân công HDV của phiếu;
+      :Cập nhật TrangThai = "Hủy - mất cọc";
+      if (Các lệnh SQL thành công?) then (Có)
+        :Commit transaction;
+        :Thông báo hủy thành công, mất cọc;
+        :Nạp lại danh sách phiếu;
+      else (Không)
+        :Rollback transaction;
+        :Thông báo lỗi;
+      endif
+    else (Không)
+      :Từ chối: đoàn đã khởi hành;
+    endif
+  else (Không)
+    :Từ chối: trạng thái không hợp lệ;
+  endif
+else (Không)
+  :Từ chối: không tìm thấy phiếu;
+endif
+stop
+@enduml

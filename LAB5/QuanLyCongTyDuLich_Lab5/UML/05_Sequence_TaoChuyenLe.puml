@@ -1,0 +1,40 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontSize 14
+title LAB5 - SEQUENCE: TAO LICH CHUYEN KHACH LE
+actor "NV điều hành" as NV
+boundary "FrmChuyenLe" as Form
+control "ChuyenLeService" as S
+participant "Db" as Db
+database "SQL Server" as SQL
+NV -> Form : Nhập thông tin, nhấn "Tạo chuyến"
+Form -> S : ThemChuyen(ma, maTour, ngayDi, diaDiemDon)
+alt Thiếu mã, tour hoặc địa điểm đón
+  S --> Form : KetQuaXuLy.Fail("Thông tin chưa đầy đủ")
+else Đủ dữ liệu
+  S -> Db : Scalar(SELECT SoNgay FROM Tour WHERE DangMoBan=1)
+  Db -> SQL : SELECT SoNgay FROM Tour ...
+  SQL --> Db : SoNgay hoặc không tìm thấy
+  Db --> S : SoNgay hoặc null
+  alt Không tìm thấy tour mở bán
+    S --> Form : Fail("Tour không tồn tại hoặc chưa mở bán")
+  else Tour hợp lệ
+    S -> S : ngayVe = ngayDi.AddDays(soNgay - 1)
+    S -> Db : Execute(INSERT ChuyenLe(...))
+    Db -> SQL : INSERT INTO ChuyenLe(...)
+    alt Ghi thành công
+      SQL --> Db : OK
+      Db --> S : Số dòng tác động
+      S --> Form : Ok("Đã tạo chuyến")
+      Form -> Form : Tai() nạp lại danh sách
+    else SQL báo lỗi
+      SQL --> Db : Exception
+      Db --> S : Exception
+      S --> Form : Fail(ex.Message)
+    end
+  end
+end
+Form -> Form : FormHelper.Bao(kết quả)
+Form --> NV : Hiển thị kết quả
+@enduml
